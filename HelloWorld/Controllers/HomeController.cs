@@ -11,8 +11,26 @@ namespace HelloWorld.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            ViewBag.Message = "This is my first MVC 5 App.";
+            var calculadora = new Calculadora();
+
+            var resultado = calculadora.Sumar(1, 2);
+
+            ViewBag.Message = "This is my first MVC 5 App. " + resultado.ToString(); 
             return View();
         }
+
+    }
+    public class Calculadora
+
+    {
+
+        public int Sumar(int num1, int num2)
+
+        {
+
+            return num1 + num2;
+
+        }
+
     }
 }
